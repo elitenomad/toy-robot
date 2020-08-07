@@ -1,4 +1,10 @@
 require "toy/robot/version"
+require "toy/robot/robot"
+require "toy/robot/grid"
+require "toy/robot/game"
+require "toy/robot/players"
+require "toy/robot/command"
+require "toy/robot/cli"
 
 module Toy
   module Robot
