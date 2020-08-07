@@ -28,7 +28,7 @@ module Toy
 
       def run(commands)
         commands.each do |command, *args|
-          game.send(command, *args)
+          game.send(command, *args) unless command == :invalid
         end
       end
     end
