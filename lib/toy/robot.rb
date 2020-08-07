@@ -9,6 +9,8 @@ require "toy/robot/cli"
 module Toy
   module Robot
     class Error < StandardError; end
+    class FileNotExistsError < StandardError; end
+    class FileFormatNotSupportedError < StandardError; end
     # Your code goes here...
   end
 end

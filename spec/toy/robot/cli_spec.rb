@@ -17,6 +17,20 @@ module Toy
                     
                     expect(commands).to eq(expected_commands)
                 end
+
+                context 'when file is not present' do
+                    it 'is expected to log custom error to screen' do
+                        path =  File.dirname(__FILE__)  + "/../../support/test.txt"
+                        expect{ subject.load(path) }.to output("Looks like input file does not exist. Please provide the right one.\n").to_stdout
+                    end
+                end
+
+                context 'when file format is not supported' do
+                    it 'is expected to log custom error to screen' do
+                        path =  File.dirname(__FILE__)  + "/../../support/test.csv"
+                        expect{ subject.load(path) }.to output("Only txt files are supported currently.\n").to_stdout
+                    end
+                end
             end
         
             context '#run' do
