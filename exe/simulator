@@ -1,0 +1,9 @@
+#!/Users/love4059/.rvm/rubies/ruby-2.7.0/bin/ruby
+
+require "bundler/setup"
+require "toy/robot"
+
+cli = Toy::Robot::CLI.new
+
+commands = cli.load(ARGV[0])
+cli.run(commands)
