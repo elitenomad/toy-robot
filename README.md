@@ -126,6 +126,7 @@ Note: Ensure latest ruby is installed on the system.
 1. One of the rules was to ignore the command if it is invalid. So the code won't show any error to the user, it just ignores the command and moves on.
 2. Not happy with the `Players` name but i thought it's most apt given the mental model i created for the problem.
 3. Only the text files are provided as input. Program return an error if any file format is provided as input.
+4. Robots won't jump when they are moving on the grid.
 
 
 ## Development
