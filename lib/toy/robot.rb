@@ -11,6 +11,7 @@ module Toy
     class Error < StandardError; end
     class FileNotExistsError < StandardError; end
     class FileFormatNotSupportedError < StandardError; end
+
     # Your code goes here...
   end
 end
