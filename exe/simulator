@@ -1,4 +1,4 @@
-#!/Users/love4059/.rvm/rubies/ruby-2.7.0/bin/ruby
+#!/usr/bin/env ruby
 
 require "bundler/setup"
 require "toy/robot"
