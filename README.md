@@ -1,6 +1,6 @@
 # Toy::Robot
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/toy/robot`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem!.
 
 # Problem
 
@@ -38,8 +38,6 @@ placed on the board.
 must be ignored.
 - Provide test data to exercise the application.
 
-
-Note: Examples are in spec folder text files.
 
 ## Folder structure
 
@@ -112,6 +110,21 @@ Note: Ensure latest ruby is installed on the system.
 ```
     ./simulator usecase-1.txt
 ```
+
+# Design
+
+## Considerations
+
+1. Took `bundle gem` help to create a folder structure. Idea was to maintain the repo with proper versioning.
+2. Created a `Players` class which is more of a Collections class based on the name and robot, it helps to keep track of player's (differentiated by name) robot position and direction.
+3. In the code, the Grid is set to static `6 X 6` dimensions. We can enhance the design easily by providing the variable dimensions from the user input. 
+4. Minor: Added clear function to Players collection class for testing purposes (It was helpful in tests).
+5. If `bin/console` is used to test the functionality. Ensure to reload it for everyfile as the Cli has to instantiate `Game` everytime. (or use simulator binary :P)
+
+## Assumptions
+
+1. One of the rules was to ignore the command if it is invalid. So the code won't show any error to the user, it just ignores the command and moves on.
+2. Not happy with the `Players` name but i thought it's most apt given the mental model i created for the problem.
 
 
 ## Development
