@@ -5,6 +5,16 @@ module Toy
       attr_reader :y
       attr_reader :direction
 
+      #           N
+      #           |
+      #           |
+      #  W ----------------- E
+      #           |
+      #           |
+      #           |
+      #           S
+      # Visualize how the Robo moves along the grid
+      #
       def initialize(x, y, direction = "NORTH")
         @x = x
         @y = y
