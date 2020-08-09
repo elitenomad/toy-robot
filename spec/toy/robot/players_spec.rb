@@ -5,6 +5,7 @@ module Toy
     RSpec.describe Players do
       subject { Toy::Robot::Players.new }
       let(:robot) { Toy::Robot::Robot.new(0, 0, "NORTH") }
+      let(:robot_2) { Toy::Robot::Robot.new(0, 1, "NORTH")  }
 
       after(:each) do
         subject.clear
@@ -54,6 +55,52 @@ module Toy
 
           it "is expected to return nil if not present" do
             expect(subject.find_robot("TEST")).to be_nil
+          end
+        end
+      end
+
+      context "#already_positioned_in_the_location" do
+        describe("when a new player is positioned in a filled location") do
+          before do
+            subject.add("ALICE", robot)
+          end
+
+          it "is expected to return falsey" do
+            expect(subject.already_positioned_in_the_location?(0, 0)).to be_falsey
+          end
+        end
+
+        describe("when player is positioned in a distinct location") do
+          before do
+            subject.add("ALICE", robot)
+          end
+
+          it "is expected to return truthy" do
+            expect(subject.already_positioned_in_the_location?(1,1)).to be_truthy
+          end
+        end
+      end
+
+      context "#overlap_on_next_move" do
+        describe("when player moves a robot to a location where its filled") do
+          before do
+            subject.add("ALICE", robot)
+            subject.add("BOB", robot_2)
+          end
+
+          it "is expected to return falsey" do
+            expect(subject.overlap_on_next_move?(0, 1, "ALICE")).to be_falsey
+          end
+        end
+
+        describe("when player moves a robot to a location where its empty") do
+          before do
+            subject.add("ALICE", robot)
+            subject.add("BOB", robot_2)
+          end
+
+          it "is expected to return truthy" do
+            expect(subject.overlap_on_next_move?(2, 0, "ALICE")).to be_truthy
           end
         end
       end

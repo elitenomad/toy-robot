@@ -10,7 +10,7 @@ module Toy
 
       def place(x, y, facing, name = nil)
         return unless @grid.valid_location?(x, y)
-        return unless @players.already_positioned_in_the_location?(x, y, name)
+        return unless @players.already_positioned_in_the_location?(x, y)
 
         @players.add(name, Toy::Robot::Robot.new(x, y, facing))
       end

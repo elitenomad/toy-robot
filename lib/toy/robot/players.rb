@@ -21,7 +21,7 @@ module Toy
         nil
       end
 
-      def already_positioned_in_the_location?(x, y, name)
+      def already_positioned_in_the_location?(x, y)
         self.list.each do |player|
           player.each do |key, val|
             if (player[:robot].x == x && player[:robot].y == y)
