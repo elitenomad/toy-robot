@@ -60,10 +60,13 @@ As a team if we want to maintain the repo we can do so by building the gem every
 │   └── Rough-Tech-Design.jpg -- Highlevel Tech design
 ├── exe
 │   ├── simulator -- Binary to run the game per file.
-│   ├── usecase-1.txt
-│   ├── usecase-2.txt
-│   ├── usecase-3.txt
-│   └── usecase-4.txt
+│   ├── usecase-1.txt - Single Player
+│   ├── usecase-2.txt - Single Player
+│   ├── usecase-3.txt - Multi Player Scattered Report statements
+│   └── usecase-4.txt - Multi Player Report statements in the end
+│   └── usecase-5.txt - Multi Player (Same as above)
+│   └── usecase-6.txt - Multi Player one after another.
+│   └── usecase-7.txt - Multi Player, Fill all the grid locations, Extra users after that should be ignored.
 ├── lib
 │   └── toy
 │       ├── robot
@@ -109,6 +112,12 @@ Note: Ensure latest ruby is installed on the system.
 
 ```
     ./simulator usecase-1.txt
+```
+
+## Test
+
+```
+    rspec spec/
 ```
 
 # Design
